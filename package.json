@@ -17,13 +17,13 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AlariCode/nestjs-rollbar"
+		"url": "https://github.com/AlariCode/nestjs-dotenv"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/AlariCode/nestjs-rollbar/issues"
+		"url": "https://github.com/AlariCode/nestjs-dotenv/issues"
 	},
-	"homepage": "https://github.com/AlariCode/nestjs-rollbar",
+	"homepage": "https://github.com/AlariCode/nestjs-dotenv",
 	"dependencies": {
 		"dotenv": "^8.0.0"
 	},
