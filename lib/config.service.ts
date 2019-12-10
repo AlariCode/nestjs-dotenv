@@ -1,13 +1,17 @@
 import * as dotenv from 'dotenv';
 
 export class ConfigService {
-	private readonly envConfig: { [prop: string]: string };
+	private envConfig: { [prop: string]: string };
 
 	constructor(path?: string) {
-		this.envConfig = dotenv.config(path ? { path } : null).parsed;
+		this.reload(path);
 	}
 
-	get(key: string): string {
+	public get(key: string): string {
 		return this.envConfig[key];
+	}
+
+	public reload(path?: string) {
+		this.envConfig = dotenv.config(path ? { path } : null).parsed;
 	}
 }

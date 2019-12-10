@@ -1,5 +1,14 @@
 # NestJS .env config Module
 
+![alt cover](https://github.com/AlariCode/nestjs-dotenv/raw/master/img/logo.jpg)
+
+**More NestJS libs on [alariblog.ru](https://alariblog.ru)**
+
+[![npm version](https://badgen.net/npm/v/nestjs-dotenv)](https://www.npmjs.com/package/nestjs-dotenv)
+[![npm version](https://badgen.net/npm/license/nestjs-dotenv)](https://www.npmjs.com/package/nestjs-dotenv)
+[![npm version](https://badgen.net/github/open-issues/AlariCode/nestjs-dotenv)](https://github.com/AlariCode/nestjs-dotenv/issues)
+[![npm version](https://badgen.net/github/prs/AlariCode/nestjs-dotenv)](https://github.com/AlariCode/nestjs-dotenv/pulls)
+
 NestJS .env package allows you easily use .env file to store your app configs.
 
 ```bash
@@ -29,12 +38,14 @@ ConfigModule.forRoot(myPath);
 To use ConfigService in any service or controller just inject it with `@ConfigInjection` decorator in the constructor:
 
 ```javascript
-import { ConfigService, ConfigInjection } from 'nestjs-dotenv';
+import { ConfigService } from 'nestjs-dotenv';
 
 constructor(
-	@ConfigInjection() private readonly configService: ConfigService
+	private readonly configService: ConfigService
 ) {}
 ```
+
+## Get env value
 
 To get a value from .env file just call `get()` method:
 
@@ -46,4 +57,12 @@ this.configService.get('JIRA_TOKEN');
 
 ```
 JIRA_TOKEN=0000000000000
+```
+
+## Reloading file
+
+To reload env dynamically use `reload()` method:
+
+```javascript
+this.configService.reload();
 ```
