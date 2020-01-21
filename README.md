@@ -59,6 +59,45 @@ this.configService.get('JIRA_TOKEN');
 JIRA_TOKEN=0000000000000
 ```
 
+Method returns `string`.
+
+## Get env value and convert it to specific type
+
+Instead of `get()` method use `getWithType()`:
+
+```javascript
+this.configService.getWithType('JIRA_TOKEN', 'string');
+```
+`getWithType()` get 3 parameters:
+-   name of your key in `.env` file.
+-   type of your data in `.env` file.
+-   (optional) Enum to convert data to, if your type is 'enum'.
+
+Available types:
+```bash
+// 'number'
+VALUE=1
+
+// 'string'
+VALUE=mystring
+
+// 'boolean'
+VALUE=true
+
+// 'array'
+VALUE=[1,2,3]
+
+// 'object'
+VALUE={"key": "value"}
+
+/** 'enum'
+ enum Color {
+    White = 1
+    Black = 2
+} **/
+VALUE=White
+```
+
 ## Reloading file
 
 To reload env dynamically use `reload()` method:
