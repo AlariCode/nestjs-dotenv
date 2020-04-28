@@ -1,6 +1,6 @@
 {
 	"name": "nestjs-dotenv",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "NestJS .env config Module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",

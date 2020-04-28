@@ -20,7 +20,7 @@ export class ConfigService {
 			case 'string':
 				return value;
 			case 'boolean':
-				return Boolean(value);
+				return value?.toLowerCase() === 'true';
 			case 'array':
 				return value.substr(1).substr(-1).split(',');
 			case 'enum':
